@@ -67,7 +67,6 @@ module Worker
           Rails.logger.info "Deposit address not found, skip. txid: #{txid}, txout: #{txout}, address: #{detail[:address]}, amount: #{detail[:amount]}"
           return
         end
-
         return if PaymentTransaction::Normal.where(txid: txid, txout: txout).first
 
         tx = PaymentTransaction::Normal.create! \
@@ -78,7 +77,7 @@ module Worker
         confirmations: raw[:confirmations],
         receive_at: Time.at(raw[:timereceived]).to_datetime,
         currency: channel.currency
-
+        
         deposit = channel.kls.create! \
         payment_transaction_id: tx.id,
         txid: tx.txid,
@@ -88,7 +87,7 @@ module Worker
         account: tx.account,
         currency: tx.currency,
         confirmations: tx.confirmations
-
+        
         deposit.submit!
       end
     rescue
