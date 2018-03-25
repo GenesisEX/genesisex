@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'rake', '<11'
 gem 'rails' 
 gem 'rails-i18n'
 
@@ -82,7 +83,7 @@ group :development, :test do
   gem 'mails_viewer'
   gem 'timecop'
   gem 'dotenv-rails'
-  gem 'rspec-rails'
+  gem 'rspec-rails', '~> 2.14'
   gem 'its'
   gem 'byebug'
 end
