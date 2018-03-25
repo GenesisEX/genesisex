@@ -1,5 +1,5 @@
 GIT
-  remote: git://github.com/InfraexDev/mina-slack.git
+  remote: git://github.com/GenesisEX/mina-slack.git
   revision: 5b7571a34f1979784720c0bfef555591e89ca3a7
   specs:
     mina-slack (0.0.3)
@@ -7,7 +7,7 @@ GIT
       rest-client (~> 1.6.7)
 
 GIT
-  remote: git://github.com/InfraexDev/unread.git
+  remote: git://github.com/GenesisEX/unread.git
   revision: b8fa0502e9558c93388a104bcbe20376cf43027d
   specs:
     unread (0.4.0)
@@ -228,8 +228,8 @@ GEM
     metaclass (0.0.2)
     method_source (0.8.2)
     mime-types (1.25.1)
-    mina (0.3.0)
-      open4
+    mina (0.3.8)
+      open4 (~> 1.3.4)
       rake
     mini_mime (1.0.0)
     mini_portile2 (2.3.0)
@@ -249,7 +249,7 @@ GEM
     omniauth-identity (1.1.1)
       bcrypt-ruby (~> 3.0)
       omniauth (~> 1.0)
-    open4 (1.3.0)
+    open4 (1.3.4)
     paper_trail (3.0.1)
       activerecord (>= 3.0, < 5.0)
       activesupport (>= 3.0, < 5.0)
