@@ -1,4 +1,5 @@
 require 'spec_helper'
+require 'its'
 
 describe Bank do
   context '#with_currency' do

@@ -195,6 +195,8 @@ GEM
     i18n (0.9.5)
       concurrent-ruby (~> 1.0)
     ice_nine (0.11.0)
+    its (0.2.0)
+      rspec-core
     jbuilder (2.0.2)
       activesupport (>= 3.0.0)
       multi_json (>= 1.2.0)
@@ -457,6 +459,7 @@ DEPENDENCIES
   grape-swagger (~> 0.7.2)
   hashie
   http_accept_language
+  its
   jbuilder
   jquery-rails
   json

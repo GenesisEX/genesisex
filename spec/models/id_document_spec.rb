@@ -1,4 +1,5 @@
 require 'spec_helper'
+require 'its'
 
 describe IdDocument do
   let(:member) { create(:member) }

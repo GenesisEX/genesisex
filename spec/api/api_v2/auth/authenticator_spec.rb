@@ -1,4 +1,5 @@
 require 'spec_helper'
+require 'its'
 
 describe APIv2::Auth::Authenticator do
   Authenticator = APIv2::Auth::Authenticator

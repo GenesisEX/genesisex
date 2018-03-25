@@ -1,4 +1,5 @@
 require 'spec_helper'
+require 'its'
 
 module Verify
   describe SmsAuthsController do

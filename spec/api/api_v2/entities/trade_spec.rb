@@ -1,4 +1,5 @@
 require 'spec_helper'
+require 'its'
 
 describe APIv2::Entities::Trade do
 

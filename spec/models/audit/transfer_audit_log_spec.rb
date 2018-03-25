@@ -1,4 +1,5 @@
 require 'spec_helper'
+require 'its'
 
 module Audit
   describe TransferAuditLog do
