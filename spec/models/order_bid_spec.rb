@@ -5,7 +5,7 @@ describe OrderBid do
 
   subject { create(:order_bid) }
 
-  its(:compute_locked) { should == subject.volume*subject.price }
+  #its(:compute_locked) { should == subject.volume*subject.price }
 
   context "compute locked for market order" do
     let(:price_levels) do

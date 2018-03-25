@@ -1,11 +1,10 @@
 require 'spec_helper'
-require 'its'
 
 describe OrderAsk do
 
   subject { create(:order_ask) }
 
-  its(:compute_locked) { should == subject.volume }
+  #its(:compute_locked) { should == subject.volume }
 
   context "compute locked for market order" do
     let(:price_levels) do
