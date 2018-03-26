@@ -20,7 +20,7 @@ gem 'omniauth-identity'
 gem 'figaro'
 gem 'hashie'
 
-gem 'aasm', '~> 3.4.0'
+gem 'aasm' 
 gem 'amqp', '~> 1.3.0'
 gem 'bunny', '~> 1.2.1'
 gem 'cancancan'
