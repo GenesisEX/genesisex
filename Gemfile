@@ -21,7 +21,7 @@ gem 'figaro'
 gem 'hashie'
 
 gem 'aasm', '~> 3.4.0' 
-gem 'amqp', '~> 1.3.0'
+gem 'amqp'
 gem 'bunny', '~> 1.2.1'
 gem 'cancancan'
 gem 'enumerize'
