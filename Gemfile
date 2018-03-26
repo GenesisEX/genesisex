@@ -34,7 +34,7 @@ gem 'http_accept_language'
 gem "globalize"
 gem 'paper_trail', '~> 3.0.1'
 gem 'rails-observers'
-gem 'country_select', '~> 2.1.0'
+gem 'country_select'
 
 gem 'gon', '~> 5.2.0'
 gem 'pusher'
