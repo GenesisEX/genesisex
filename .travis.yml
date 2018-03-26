@@ -1,6 +1,6 @@
 language: ruby
 rvm:
-  - 2.4.1
+  - 2.3.4
 before_script:
   - "mysql -e 'create database peatio_test;'"
   - "cp ./.travis.database.yml ./config/database.yml"
