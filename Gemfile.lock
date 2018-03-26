@@ -170,11 +170,10 @@ GEM
     globalize (4.0.3)
       activemodel (>= 4.0.0, < 5)
       activerecord (>= 4.0.0, < 5)
-    gon (5.2.0)
-      actionpack (>= 2.3.0)
-      json
+    gon (6.2.0)
+      actionpack (>= 3.0)
       multi_json
-      request_store (>= 1.0.5)
+      request_store (>= 1.0)
     grape (0.7.0)
       activesupport
       builder
@@ -472,7 +471,7 @@ DEPENDENCIES
   figaro
   font-awesome-sass
   globalize
-  gon (~> 5.2.0)
+  gon
   grape (~> 0.7.0)
   grape-entity (~> 0.4.2)
   grape-swagger (~> 0.7.2)
