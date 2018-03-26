@@ -22,7 +22,7 @@ gem 'hashie'
 
 gem 'aasm', '~> 3.4.0' 
 gem 'amqp'
-gem 'bunny', '~> 1.2.1'
+gem 'bunny'
 gem 'cancancan'
 gem 'enumerize'
 gem 'datagrid'

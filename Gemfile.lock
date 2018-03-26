@@ -75,8 +75,8 @@ GEM
       thor
     browser (0.8.0)
     builder (3.1.4)
-    bunny (1.2.1)
-      amq-protocol (>= 1.9.2)
+    bunny (2.9.2)
+      amq-protocol (~> 2.3.0)
     byebug (2.7.0)
       columnize (~> 0.3)
       debugger-linecache (~> 1.2)
@@ -439,7 +439,7 @@ DEPENDENCIES
   bootstrap-wysihtml5-rails
   bourbon
   browser (~> 0.8.0)
-  bunny (~> 1.2.1)
+  bunny
   byebug
   cancancan
   capybara
