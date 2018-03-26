@@ -38,7 +38,7 @@ gem 'country_select'
 
 gem 'gon'
 gem 'pusher'
-gem 'eventmachine', '~> 1.0.4'
+gem 'eventmachine'
 gem 'em-websocket', '~> 0.5.1'
 
 gem 'simple_form', '~> 3.1.0'

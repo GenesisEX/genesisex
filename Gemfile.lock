@@ -152,7 +152,7 @@ GEM
       activesupport (>= 3.2)
     equalizer (0.0.9)
     erubis (2.7.0)
-    eventmachine (1.0.9.1)
+    eventmachine (1.2.5)
     execjs (2.2.1)
     factory_girl (4.3.0)
       activesupport (>= 3.0.0)
@@ -465,7 +465,7 @@ DEPENDENCIES
   eco
   em-websocket (~> 0.5.1)
   enumerize
-  eventmachine (~> 1.0.4)
+  eventmachine
   factory_girl_rails
   faker (~> 1.4.3)
   figaro
