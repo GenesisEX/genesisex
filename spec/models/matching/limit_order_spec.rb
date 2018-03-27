@@ -17,16 +17,16 @@ describe Matching::LimitOrder do
   context "crossed?" do
     it "should cross at lower or equal price for bid order" do
       order = Matching.mock_limit_order(type: :bid, price: '10.0'.to_d)
-      order.crossed?('9.0'.to_d).should be_true
-      order.crossed?('10.0'.to_d).should be_true
-      order.crossed?('11.0'.to_d).should be_false
+      order.crossed?('9.0'.to_d).should be_truthy
+      order.crossed?('10.0'.to_d).should be_truthy
+      order.crossed?('11.0'.to_d).should be_falsey
     end
 
     it "should cross at higher or equal price for ask order" do
       order = Matching.mock_limit_order(type: :ask, price: '10.0'.to_d)
-      order.crossed?('9.0'.to_d).should be_false
-      order.crossed?('10.0'.to_d).should be_true
-      order.crossed?('11.0'.to_d).should be_true
+      order.crossed?('9.0'.to_d).should be_falsey
+      order.crossed?('10.0'.to_d).should be_truthy
+      order.crossed?('11.0'.to_d).should be_truthy
     end
   end
 end

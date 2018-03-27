@@ -25,7 +25,7 @@ module Authentications
         post :create, data
         member.reload
         member.email.should == 'xman@xman.com'
-        member.activated.should be_false
+        member.activated.should be_falsey
       end
     end
 

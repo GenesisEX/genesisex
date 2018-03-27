@@ -8,24 +8,24 @@ describe PaymentTransaction do
     tx.stubs(:min_confirm?).returns(false)
     tx.stubs(:max_confirm?).returns(false)
 
-    expect(tx.unconfirm?).to be_true
-    expect(tx.check).to be_false
-    expect(tx.check).to be_false
-    expect(tx.check).to be_false
-    expect(tx.unconfirm?).to be_true
+    expect(tx.unconfirm?).to be_truthy
+    expect(tx.check).to be_falsey
+    expect(tx.check).to be_falsey
+    expect(tx.check).to be_falsey
+    expect(tx.unconfirm?).to be_truthy
 
     tx.stubs(:min_confirm?).returns(true)
     tx.stubs(:max_confirm?).returns(false)
 
-    expect(tx.check).to be_true
-    expect(tx.confirming?).to be_true
+    expect(tx.check).to be_truthy
+    expect(tx.confirming?).to be_truthy
 
     tx.stubs(:min_confirm?).returns(false)
     tx.stubs(:max_confirm?).returns(true)
 
-    expect(tx.check).to be_true
-    expect(tx.confirmed?).to be_true
-    expect(tx.check).to be_true
+    expect(tx.check).to be_truthy
+    expect(tx.confirmed?).to be_truthy
+    expect(tx.check).to be_truthy
   end
 
 end

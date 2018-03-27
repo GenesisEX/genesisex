@@ -23,7 +23,7 @@ describe APIv2::Helpers do
     let!(:token) { create(:api_token) }
 
     context "Authenticate using headers" do
-      pending
+      skip
     end
 
     context "Authenticate using params" do

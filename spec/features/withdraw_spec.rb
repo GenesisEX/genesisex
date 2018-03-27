@@ -24,7 +24,7 @@ describe 'withdraw' do
   end
 
   it 'allows user to add a BTC withdraw address, withdraw BTC' do
-    pending
+    skip
 
     login identity
 
@@ -48,7 +48,7 @@ describe 'withdraw' do
   end
 
   it 'prevents withdraws that the account has no sufficient balance' do
-    pending
+    skip
     current_user = Member.find_by_email identity.email
     create :two_factor_sms, member: current_user
 

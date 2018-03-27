@@ -5,7 +5,7 @@ describe '2-step verification' do
   let!(:member) { create :member, email: identity.email }
 
   it 'allows user to set it up and disable it' do
-    pending
+    skip
 
     signin identity
 

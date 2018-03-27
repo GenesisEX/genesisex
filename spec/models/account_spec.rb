@@ -181,7 +181,7 @@ describe Account do
       it "returns false when account changed without versions" do
         account.stubs(:member).returns(member)
         account.update_attribute(:balance, 5000.to_d)
-        expect(account.examine).to be_false
+        expect(account.examine).to be_falsey
       end
     end
 
@@ -203,12 +203,12 @@ describe Account do
       it "returns false when account balance doesn't match versions" do
         account.stubs(:member).returns(member)
         account.update_attribute(:balance, 5000.to_d)
-        expect(account.examine).to be_false
+        expect(account.examine).to be_falsey
       end
 
       it "returns false when account versions were changed" do
         account.versions.load.sample.update_attribute(:amount, 50.to_d)
-        expect(account.examine).to be_false
+        expect(account.examine).to be_falsey
       end
     end
   end

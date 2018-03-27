@@ -46,23 +46,23 @@ describe APIToken do
   end
 
   it "should return false if out of scope" do
-    token.in_scopes?(%w(foo)).should be_false
+    token.in_scopes?(%w(foo)).should be_falsey
   end
 
   it "should return true if in scope" do
     token.scopes = 'foo'
-    token.in_scopes?(%w(foo)).should be_true
+    token.in_scopes?(%w(foo)).should be_truthy
   end
 
   it "should return true if token has all scopes" do
     token.scopes = 'all'
-    token.in_scopes?(%w(foo)).should be_true
-    token.in_scopes?(%w(bar)).should be_true
+    token.in_scopes?(%w(foo)).should be_truthy
+    token.in_scopes?(%w(bar)).should be_truthy
   end
 
   it "should return true if api require no scope" do
-    token.in_scopes?(nil).should be_true
-    token.in_scopes?([]).should be_true
+    token.in_scopes?(nil).should be_truthy
+    token.in_scopes?([]).should be_truthy
   end
 
   it "should destroy itself only" do
