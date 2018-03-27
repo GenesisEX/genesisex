@@ -66,7 +66,7 @@ gem 'easy_table'
 gem 'phonelib'
 gem 'twilio-ruby'
 gem 'unread', github: 'GenesisEX/unread'
-gem 'carrierwave', '~> 0.10.0'
+gem 'carrierwave'
 gem 'simple_captcha2', require: 'simple_captcha'
 gem 'rest-client'
 
