@@ -72,7 +72,7 @@ gem 'rest-client'
 
 group :development, :test do
   gem 'factory_girl_rails'
-  gem 'faker', '~> 1.4.3'
+  gem 'faker'
   gem 'mina'
   gem 'mina-slack', github: 'GenesisEX/mina-slack'
   gem 'meta_request'
