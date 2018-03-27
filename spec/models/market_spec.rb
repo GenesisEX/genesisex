@@ -21,7 +21,7 @@ describe Market do
     its(:name)       { should == 'BTC/CNY' }
     its(:base_unit)  { should == 'btc' }
     its(:quote_unit) { should == 'cny' }
-    its(:visible)    { should be_true }
+    its(:visible)    { should be_truthy }
   end
 
   context 'enumerize' do

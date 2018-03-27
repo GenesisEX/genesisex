@@ -4,6 +4,7 @@ An open-source crypto currency exchange
 [![Code Climate](https://codeclimate.com/github/GenesisEX/peatio.png)](https://codeclimate.com/github/GenesisEX/peatio)
 [![Build Status](https://travis-ci.org/GenesisEX/peatio.png?branch=stable)](https://travis-ci.org/GenesisEX/peatio)
 [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/InfraexDevPeatio/Lobby)
+[![Telegram Chat](https://cdn.rawgit.com/Patrolavia/telegram-badge/8fe3382b/chat.svg)](https://t.me/peatio)
 
 Peatio is a free and open-source crypto currency exchange implementation with the Rails framework and other cutting-edge technology.
 

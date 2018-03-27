@@ -130,7 +130,7 @@ describe Withdraw do
 
       lambda { Worker::WithdrawCoin.new.process({id: subject.id}, {}, {}) }.should raise_error(Account::BalanceError)
 
-      expect(subject.reload.almost_done?).to be_true
+      expect(subject.reload.almost_done?).to be_truthy
     end
 
     it 'transitions to :done after calling rpc' do
@@ -139,7 +139,7 @@ describe Withdraw do
       expect { Worker::WithdrawCoin.new.process({id: subject.id}, {}, {}) }.to change{subject.account.reload.amount}.by(-subject.sum)
 
       subject.reload
-      expect(subject.done?).to be_true
+      expect(subject.done?).to be_truthy
       expect(subject.txid).to eq('12345')
     end
 
@@ -149,7 +149,7 @@ describe Withdraw do
       CoinRPC.stubs(:[]).returns(mock())
 
       expect { Worker::WithdrawCoin.new.process({id: subject.id}, {}, {}) }.to_not change{subject.account.reload.amount}
-      expect(subject.reload.almost_done?).to be_true
+      expect(subject.reload.almost_done?).to be_truthy
     end
   end
 
@@ -161,13 +161,13 @@ describe Withdraw do
     end
 
     it 'initializes with state :submitting' do
-      expect(subject.submitting?).to be_true
+      expect(subject.submitting?).to be_truthy
     end
 
     it 'transitions to :submitted after calling #submit!' do
       subject.submit!
 
-      expect(subject.submitted?).to be_true
+      expect(subject.submitted?).to be_truthy
       expect(subject.sum).to eq subject.account.locked
       expect(subject.sum).to eq subject.account_versions.last.locked
     end
@@ -177,7 +177,7 @@ describe Withdraw do
       subject.accept!
       subject.reject!
 
-      expect(subject.rejected?).to be_true
+      expect(subject.rejected?).to be_truthy
     end
 
     context :process do
@@ -191,7 +191,7 @@ describe Withdraw do
 
         subject.process!
 
-        expect(subject.processing?).to be_true
+        expect(subject.processing?).to be_truthy
       end
 
       it 'transitions to :failed after calling #fail! when withdrawing fiat currency' do
@@ -201,7 +201,7 @@ describe Withdraw do
 
         expect { subject.fail! }.to_not change{subject.account.amount}
 
-        expect(subject.failed?).to be_true
+        expect(subject.failed?).to be_truthy
       end
 
       it 'transitions to :processing after calling #process!' do
@@ -209,7 +209,7 @@ describe Withdraw do
 
         subject.process!
 
-        expect(subject.processing?).to be_true
+        expect(subject.processing?).to be_truthy
       end
     end
 
@@ -217,7 +217,7 @@ describe Withdraw do
       it 'transitions to :canceled after calling #cancel!' do
         subject.cancel!
 
-        expect(subject.canceled?).to be_true
+        expect(subject.canceled?).to be_truthy
         expect(subject.account.locked).to eq 0
       end
 
@@ -225,7 +225,7 @@ describe Withdraw do
         subject.submit!
         subject.cancel!
 
-        expect(subject.canceled?).to be_true
+        expect(subject.canceled?).to be_truthy
         expect(subject.account.locked).to eq 0
       end
 
@@ -234,7 +234,7 @@ describe Withdraw do
         subject.accept!
         subject.cancel!
 
-        expect(subject.canceled?).to be_true
+        expect(subject.canceled?).to be_truthy
         expect(subject.account.locked).to eq 0
       end
     end

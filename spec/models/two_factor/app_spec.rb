@@ -61,14 +61,14 @@ describe TwoFactor::App do
     subject { member.app_two_factor }
     before { subject.active! }
 
-    its(:activated?) { should be_true }
+    its(:activated?) { should be_truthy }
   end
 
   describe '#deactive!' do
     subject { create :two_factor_app, activated: true }
     before { subject.deactive! }
 
-    its(:activated?) { should_not be_true }
+    its(:activated?) { should_not be_truthy }
   end
 
 
@@ -76,7 +76,7 @@ describe TwoFactor::App do
     before { create :member, :app_two_factor_activated }
 
     it "should has activated" do
-      expect(TwoFactor.activated?).to be_true
+      expect(TwoFactor.activated?).to be_truthy
     end
   end
 

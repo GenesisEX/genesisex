@@ -52,7 +52,7 @@ describe APIv2::Deposits do
       signed_get '/api/v2/deposits', params: {currency: 'cny'}, token: token
       result = JSON.parse(response.body)
       result.should have(2).deposits
-      result.all? {|d| d['currency'] == 'cny' }.should be_true
+      result.all? {|d| d['currency'] == 'cny' }.should be_truthy
     end
 
     it "should return 404 if txid not exist" do

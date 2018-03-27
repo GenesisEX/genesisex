@@ -90,7 +90,7 @@ describe Account do
     context 'when account add funds' do
       subject { account.plus_funds("10".to_d, reason: Account::WITHDRAW).last_version }
 
-      it { expect(subject.reason.withdraw?).to be_true }
+      it { expect(subject.reason.withdraw?).to be_truthy }
       it { expect(subject.locked).to be_d "0" }
       it { expect(subject.balance).to be_d "10" }
       it { expect(subject.amount).to be_d "110" }
@@ -101,7 +101,7 @@ describe Account do
     context 'when account add funds with fee' do
       subject { account.plus_funds("10".to_d, fee: '1'.to_d, reason: Account::WITHDRAW).last_version }
 
-      it { expect(subject.reason.withdraw?).to be_true }
+      it { expect(subject.reason.withdraw?).to be_truthy }
       it { expect(subject.locked).to be_d "0" }
       it { expect(subject.balance).to be_d "10" }
       it { expect(subject.amount).to be_d "110" }
@@ -111,7 +111,7 @@ describe Account do
 
     context 'when account sub funds' do
       subject { account.sub_funds("10".to_d, reason: Account::WITHDRAW).last_version }
-      it { expect(subject.reason.withdraw?).to be_true }
+      it { expect(subject.reason.withdraw?).to be_truthy }
       it { expect(subject.locked).to be_d "0" }
       it { expect(subject.balance).to be_d "-10" }
       it { expect(subject.amount).to be_d "90" }
@@ -121,7 +121,7 @@ describe Account do
 
     context 'when account sub funds with fee' do
       subject { account.sub_funds("10".to_d, fee: '1'.to_d, reason: Account::WITHDRAW).last_version }
-      it { expect(subject.reason.withdraw?).to be_true }
+      it { expect(subject.reason.withdraw?).to be_truthy }
       it { expect(subject.locked).to be_d "0" }
       it { expect(subject.balance).to be_d "-10" }
       it { expect(subject.amount).to be_d "90" }
@@ -131,7 +131,7 @@ describe Account do
 
     context 'when account lock funds' do
       subject { account.lock_funds("10".to_d, reason: Account::WITHDRAW).last_version }
-      it { expect(subject.reason.withdraw?).to be_true }
+      it { expect(subject.reason.withdraw?).to be_truthy }
       it { expect(subject.locked).to be_d "10" }
       it { expect(subject.balance).to be_d "-10" }
       it { expect(subject.amount).to be_d "100.0" }
@@ -140,7 +140,7 @@ describe Account do
     context 'when account unlock funds' do
       let(:account) { create(:account, locked: "10".to_d) }
       subject { account.unlock_funds("10".to_d, reason: Account::WITHDRAW).last_version }
-      it { expect(subject.reason.withdraw?).to be_true }
+      it { expect(subject.reason.withdraw?).to be_truthy }
       it { expect(subject.locked).to be_d "-10" }
       it { expect(subject.balance).to be_d "10" }
       it { expect(subject.amount).to be_d "110" }
@@ -149,7 +149,7 @@ describe Account do
     context 'when account unlock and sub funds' do
       let(:account) { create(:account, balance: '10'.to_d, locked: "10".to_d) }
       subject { account.unlock_and_sub_funds("10".to_d, locked: "10".to_d, reason: Account::WITHDRAW).last_version }
-      it { expect(subject.reason.withdraw?).to be_true }
+      it { expect(subject.reason.withdraw?).to be_truthy }
       it { expect(subject.locked).to be_d "-10" }
       it { expect(subject.balance).to be_d "0" }
       it { expect(subject.amount).to be_d "10.0" }
@@ -160,7 +160,7 @@ describe Account do
     context 'when account unlock and sub funds with fee' do
       let(:account) { create(:account, balance: '10'.to_d, locked: "10".to_d) }
       subject { account.unlock_and_sub_funds("10".to_d, fee: '1'.to_d, locked: "10".to_d, reason: Account::WITHDRAW).last_version }
-      it { expect(subject.reason.withdraw?).to be_true }
+      it { expect(subject.reason.withdraw?).to be_truthy }
       it { expect(subject.locked).to be_d "-10" }
       it { expect(subject.balance).to be_d "0" }
       it { expect(subject.amount).to be_d "10.0" }
@@ -175,7 +175,7 @@ describe Account do
 
     context "account without any account versions" do
       it "returns true" do
-        expect(account.examine).to be_true
+        expect(account.examine).to be_truthy
       end
 
       it "returns false when account changed without versions" do
@@ -197,7 +197,7 @@ describe Account do
       end
 
       it "returns true" do
-        expect(account.examine).to be_true
+        expect(account.examine).to be_truthy
       end
 
       it "returns false when account balance doesn't match versions" do

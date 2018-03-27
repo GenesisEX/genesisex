@@ -10,7 +10,7 @@ describe Authentications::IdentitiesController, type: :controller do
     it { should be_success }
     it "should set the identity" do
       do_request
-      assigns(:identity).new_record?.should be_true
+      assigns(:identity).new_record?.should be_truthy
       assigns(:identity).email.should == email
     end
   end
