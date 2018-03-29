@@ -102,7 +102,7 @@ describe Order, "#done" do
       it "should be keep wait state" do
         expect do
           order.strike(mock_trade("5.0", "0.8"))
-        end.to_not change{ order.state }.by(Order::WAIT)
+        end.not_to(change{ order.state })
       end
 
       it "should be change to done state" do
@@ -122,7 +122,7 @@ describe Order, "#done" do
       it "should be don't change origin volume" do
         expect do
           order.strike(mock_trade("4.0", "1.2"))
-        end.to_not change{ order.origin_volume }.by("10.0".to_d)
+        end.to_not(change{ order.origin_volume })
       end
     end
 

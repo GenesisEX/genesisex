@@ -173,7 +173,7 @@ describe APIv2::Orders do
         signed_post '/api/v2/orders', params: {market: 'btccny', side: 'sell', volume: '12.13', price: '2014'}
         response.code.should == '400'
         response.body.should == '{"error":{"code":2002,"message":"Failed to create order. Reason: cannot lock funds (amount: 12.13)"}}'
-      }.not_to change(OrderAsk, :count).by(1)
+      }.to_not(change(OrderAsk, :count))
     end
 
     it "should give a number as volume parameter" do
